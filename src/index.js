@@ -1,13 +1,33 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom';
+
+// Components
+import Navigation from "./components/navigation";
+import Landing from "./components/landing";
+import About from "./components/about";
+import Skills from "./components/skills";
+import Portfolio from "./components/portfolio";
+import Contact from "./components/contact";
+import Preloader from "./components/preloader";
+import BackToTop from "./components/backToTop";
+
+// CSS
 import './index.css';
-import App from './App';
+//import "antd/dist/antd.css";
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <React.Fragment>
+    <Navigation />
+    <Landing />
+    <About />
+    <Skills />
+    <Portfolio />
+    <Contact />
+    <Preloader />
+    <BackToTop />
+  </React.Fragment>,
   document.getElementById('root')
 );
 
@@ -15,3 +35,8 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+
+
+
