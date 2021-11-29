@@ -1,0 +1,161 @@
+$coin-diameter: 400px;
+$coin-thickness: 1px;
+
+$coin-front: "../../img/Pete3.png";
+$coin-back: "../../img/Pete2.jpg";
+$turn-time: 10s;
+
+.rotate {
+  position: relative;
+  width: $coin-diameter;
+  height: $coin-diameter;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  animation: rotate3d $turn-time ease-in-out infinite alternate;
+  transition: all 0.1s;
+}
+
+.noRotate {
+  position: relative;
+  width: $coin-diameter;
+  height: $coin-diameter;
+  border-radius: 50%;
+}
+
+.coin__front,
+.coin__back {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.coin__static {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url($coin-front);
+  background-size: cover;
+  width: $coin-diameter;
+  height: $coin-diameter;
+}
+
+.coin__front {
+  background-image: url($coin-front);
+  background-size: cover;
+  transform: translateZ($coin-thickness);
+  width: $coin-diameter;
+  height: $coin-diameter;
+}
+.coin__back {
+  background-image: url($coin-back);
+  background-size: cover;
+  transform: rotateY(180deg);
+  width: $coin-diameter;
+  height: $coin-diameter;
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.eyes-follow-tired {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80vh;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .eyelid {
+      position: absolute;
+      width: 220px;
+      height: 100px;
+      background-color: white;
+      z-index: 400;
+      top: -120px;
+      animation: blink 4.5s infinite ease-in alternate;
+      animation-delay: 1s;
+    }
+    @keyframes blink {
+      0% {
+        top: -120px;
+      }
+      95% {
+        top: -120px;
+      }
+      100% {
+        top: -50px;
+      }
+    }
+
+    .eyes {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .eye {
+        border-radius: 50%;
+        height: 90px;
+        width: 90px;
+        background-color: #f3efef;
+
+        .pupil {
+          position: absolute;
+          background-color: #382e25;
+          border-radius: 50%;
+          width: 18px;
+          height: 18px;
+          left: 50px;
+          top: 35px;
+        }
+      }
+    }
+  }
+
+  .tiredness {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+
+    .header {
+      font-size: 23px;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    input {
+      transform: scale(1.3);
+    }
+  }
+}
+
+.is-worse {
+  z-index: 1;
+}
+
+.back-to-top-button {
+  position: fixed;
+  left: 30px;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 3%;
+}

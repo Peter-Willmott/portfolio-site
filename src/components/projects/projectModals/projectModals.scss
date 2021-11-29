@@ -1,0 +1,28 @@
+.ant-modal-footer,
+.ant-modal-header {
+  background-color: rgb(26, 33, 51);
+}
+
+.ant-modal-header {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+
+.ant-modal-content {
+  border-radius: 1.5rem;
+}
+
+.ant-modal-footer {
+  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+}
+
+.ant-modal-title {
+  color: #ffffff;
+  font-size: 28px;
+  text-align: center;
+}
+
+.ant-modal-close {
+  color: #ffffff;
+}
